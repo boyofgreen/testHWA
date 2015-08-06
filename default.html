@@ -24,13 +24,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Brand</a>
+          <a class="navbar-brand" href="#" id="homeMain">BBC Sports</a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Link</a></li>
+            <li class="active"><a href="#" id="home">Home</a></li>
+            <li><a href="#" id="football">Link</a></li>
             <li><a href="#">Link</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
@@ -38,18 +38,14 @@
     </nav>
 <x-ms-webview src=" http://m.bbc.co.uk/sport.app" id="webview" style="width:100%; height:100%"></x-ms-webview>
     <script>
-        setTimeout(function(){
-            
-          //      var webview = document.createElement('x-ms-webview');
- //   document.body.appendChild(webview);
- //   webview.navigate('http://m.bbc.co.uk/sport.app')
-    
-    
-        },2000)
-
-
-
-//    <x-ms-webview src=" http://m.bbc.co.uk/sport.app" id="webview" style="width:100%; height:100%"></x-ms-webview>
+        var webview = document.getElementById('webview');
+        var homeMain = document.getElementById('homeMain');
+        var home = document.getElementById('home');
+        var football = document.getElementById('football');
+        
+        homeMain.addEventListener('pointerdown', function(){webview.navigate('http://m.bbc.co.uk/sport.app')});
+         home.addEventListener('pointerdown', function(){webview.navigate('http://m.bbc.co.uk/sport.app')});
+          football.addEventListener('pointerdown', function(){webview.navigate('http://m.bbc.co.uk/sport/football.app')});
     </script>
     <style>
     body,html{height:100%}
