@@ -11,7 +11,8 @@
     <x-ms-webview src=" http://m.bbc.co.uk/sport.app" id="webveiw" style="width:100%; height:100%"></x-ms-webview>
 
     <script>
-        //ms-appx-web:///default.html
+       var webview  = document.getElementById('webview');
+       webview.height = window.innerHeight;
 
     </script>
 </body>
