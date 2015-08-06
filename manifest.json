@@ -1,7 +1,7 @@
 {
     "lang": "en",
-    "name": "Shifter connections",
-    "short_name": "Shiftr",
+    "name": "BBC Sports",
+    "short_name": "BBCSports",
     "icons": [
         {
             "src": "/images/windows-smallsquare-42-42.png",
@@ -27,7 +27,7 @@
             "sizes": "620x300"
         }
     ],
-    "start_url": "",
+    "start_url": "https://testhwa.azurewebsites.net/default.html",
     "scope": "/",
     "mjs_access_whitelist": [
         { "url": "https://testhwa.azurewebsites.net", "apiAccess":"all" }
