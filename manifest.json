@@ -12,11 +12,11 @@
             "sizes": "54x54"
         },
      {
-            "src": "/images/windows-smallsquare-150-150.png",
+            "src": "/images/windows-squarelogo-150-150.png",
             "sizes": "150x150"
         },
        {
-            "src": "/images/windows-smallsquare-270-270.png",
+            "src": "/images/windows-squarelogo-270-270.png",
             "sizes": "270x270"
         }
 
