@@ -8,14 +8,18 @@
 
 </head>
 <body id="body">
-    <x-ms-webview src=" http://m.bbc.co.uk/sport.app" id="webview" style="width:100%; height:100%"></x-ms-webview>
+
 
     <script>
-    
+    var webview = document.createElement('x-ms-webivew');
+    document.body.appendChild(webview);
+    webview.navigate('http://m.bbc.co.uk/sport.app')
 
+
+//    <x-ms-webview src=" http://m.bbc.co.uk/sport.app" id="webview" style="width:100%; height:100%"></x-ms-webview>
     </script>
     <style>
-        #webview, body{
+        x-ms-webview, body{
             height:100%;
             width:100%;
         }
