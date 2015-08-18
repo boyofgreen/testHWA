@@ -10,14 +10,15 @@
             // when navigation is complete, remove the loading icon
             webview.addEventListener("MSWebViewNavigationCompleted", function(){toggleLoadingScreen(false)});
             //set to make sure page isn't already loaded
-            WAT.options.webView.addEventListener("MSWebViewDOMContentLoaded", webViewLoaded);
-            WAT.options.webView.addEventListener("MSWebViewContentLoading", webViewLoaded);
+            webview.addEventListener("MSWebViewDOMContentLoaded", webViewLoaded);
+            webview.addEventListener("MSWebViewContentLoading", webViewLoaded);
             
         var    webViewLoaded = function () {
                 contentLoaded = true;
         };     
             
        var  toggleLoadingScreen =  function (isLoading) {
+               console.log('stating loading screen')
                contentLoaded = false;
 
             if (isLoading) {
