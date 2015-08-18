@@ -35,7 +35,7 @@
         
      webview.addEventListener('MSWebViewDOMContentLoaded', function(){
 	
-     $.ajax({url: pathForCSS, success: function(result){injectInWebview(result) }});
+     $.ajax({url: pathForCSS, success: setupCSSInject});
 	
 });
 
