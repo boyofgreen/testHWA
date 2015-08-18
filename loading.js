@@ -38,15 +38,14 @@
                                     blurImage.setAttribute("xlink:href", reader.result);
                                     blurOverlay.classList.remove("fadeOut");
                                 }
-                            };
+                            
                         };
                         capturePreview.start();
                     }
 
 
                stage.classList.add("loading");
-            }
-            if (stage.classList.contains("loading")) {
+            } else if (stage.classList.contains("loading")) {
                     if (blurOverlay && clearOverlay) {
                         clearOverlay.style.display = "none";
                         blurOverlay.classList.add("fadeOut");
@@ -55,7 +54,7 @@
                     stage.classList.remove("loading");
             }
        
-        
+       }
         
         
         })();
