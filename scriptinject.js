@@ -1,6 +1,6 @@
 (function () {
 	
-	var pathForJS = '/customscript.js';
+	var pathForJS = '/customscript.txt';
 	var webview = document.getElementById('webview');
 
 
