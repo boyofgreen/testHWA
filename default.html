@@ -9,8 +9,7 @@
 
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-
-
+<link rel="stylesheet" href="loadingscreen.css" >
 
 </head>
 <body id="body">
@@ -36,7 +35,23 @@
         </div><!-- /.navbar-collapse -->
       </div>
     </nav>
+<div class="stage" id="stage">
 <x-ms-webview src=" http://m.bbc.co.uk/sport.app" id="webview" style="width:100%; height:100%"></x-ms-webview>
+    <div class="webview-overlay">
+        <svg preserveAspectRatio="true">
+            <defs>
+                <filter id="filtersPicture">
+                    <feGaussianBlur stdDeviation="2" />
+                </filter>
+            </defs>
+            <image x="0" y="0" width="100%" height="100%" xlink:href="" filter="url(#filtersPicture)"></image>
+        </svg>
+    </div>
+    <div class="transparent-overlay"></div>
+    <div id="loading-wrapper" class="loading-wrapper">
+        <progress id="page-load-progress" class="loading-progress win-ring win-large"></progress>
+    </div>
+</div>
     <script>
         var webview = document.getElementById('webview');
         var homeMain = document.getElementById('homeMain');
@@ -56,6 +71,7 @@
     <!-- Latest compiled and minified JavaScript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="loading.js"></script>
 <script src="scriptinject.js"></script>
 <script src="cssinject.js"></script>
 </body>
