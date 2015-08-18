@@ -7,8 +7,9 @@
 	
 	
 	var setupCSSInject = function(result){
-                
-            var scriptString = "var cssString = '" + '.article__media {border: 3px solid red;}' + "';" +
+              
+			var cssString = result.replace(/\r\n/gm, " ");  
+            var scriptString = "var cssString = '" + cssString + "';" +
             "var styleEl = document.createElement('style');" +
             "document.body.appendChild(styleEl);" +
             "styleEl.innerHTML = cssString;";  
