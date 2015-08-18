@@ -1,20 +1,29 @@
 
 (function () {
 	var webview = document.getElementById('webview');
-
+        var stage = document.getElementById('stage');
+        var clearOverlay = document.querySelector(".transparent-overlay");
+        var blurOverlay = document.querySelector(".webview-overlay");
+        var contentLoaded = false;
+        
             webview.addEventListener("MSWebViewNavigationStarting", function(){toggleLoadingScreen(true)});
             // when navigation is complete, remove the loading icon
             webview.addEventListener("MSWebViewNavigationCompleted", function(){toggleLoadingScreen(false)});
-
-
+            //set to make sure page isn't already loaded
+            WAT.options.webView.addEventListener("MSWebViewDOMContentLoaded", webViewLoaded);
+            WAT.options.webView.addEventListener("MSWebViewContentLoading", webViewLoaded);
+            
+        var    webViewLoaded = function () {
+                contentLoaded = true;
+        };     
+            
        var  toggleLoadingScreen =  function (isLoading) {
-          var clearOverlay = document.querySelector(".transparent-overlay");
-            var blurOverlay = document.querySelector(".webview-overlay");
+               contentLoaded = false;
 
             if (isLoading) {
 
                         // use base64 encoded bitmap to improve performance in Windows
-                        var capturePreview = WAT.options.webView.capturePreviewToBlobAsync();
+                        var capturePreview = webview.capturePreviewToBlobAsync();
                         var blurImage = document.querySelector(".webview-overlay svg image");
 
                         capturePreview.oncomplete = function (completeEvent) {
@@ -22,7 +31,7 @@
                             reader.readAsDataURL(completeEvent.target.result);
                             reader.onloadend = function () {
                                 // skip show blurred previous page if next page was already shown
-                                if (!self.contentLoaded && WAT.options.stage.classList.contains("loading")) {
+                                if (!contentLoaded && stage.classList.contains("loading")) {
                                     clearOverlay.style.display = 'inline';
 
                                     blurImage.setAttribute("xlink:href", reader.result);
@@ -34,17 +43,17 @@
                     }
 
 
-                WAT.options.stage.classList.add("loading");
+               stage.classList.add("loading");
             }
-            if (WAT.options.stage.classList.contains("loading")) {
+            if (stage.classList.contains("loading")) {
                     if (blurOverlay && clearOverlay) {
                         clearOverlay.style.display = "none";
                         blurOverlay.classList.add("fadeOut");
                     }
 
-                    WAT.options.stage.classList.remove("loading");
+                    stage.classList.remove("loading");
             }
-        }
+       
         
         
         
