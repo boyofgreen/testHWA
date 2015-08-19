@@ -17,7 +17,7 @@
                 contentLoaded = true;
         };     
             
- var  toggleLoadingScreen = function (isLoading) {
+ /*var  toggleLoadingScreen = function (isLoading) {
 
 
       if (isLoading) {
@@ -40,9 +40,9 @@
 
           stage.classList.remove("loading");
       }
-  };
+  }; */
 
-  /*     var  toggleLoadingScreen =  function (isLoading) {
+       var  toggleLoadingScreen =  function (isLoading) {
                console.log('stating loading screen')
                contentLoaded = false;
 
@@ -53,6 +53,7 @@
                         var blurImage = document.querySelector(".webview-overlay svg image");
 
                         capturePreview.oncomplete = function (completeEvent) {
+                                console.log('capture is complete')
                             var reader = new window.FileReader();
                             reader.readAsDataURL(completeEvent.target.result);
                             reader.onloadend = function () {
@@ -79,7 +80,7 @@
                     stage.classList.remove("loading");
             }
        
-       } */
+       };
         
         
         })();
