@@ -17,7 +17,32 @@
                 contentLoaded = true;
         };     
             
-       var  toggleLoadingScreen =  function (isLoading) {
+ var  toggleLoadingScreen = function (isLoading) {
+
+
+      if (isLoading) {
+          if (blurOverlay && clearOverlay) {
+            if (!self.contentLoaded) {
+                clearOverlay.style.display = 'inline';
+                blurOverlay.classList.remove("fadeOut");
+                if (!clearOverlay.classList.contains("overlay-wp")) {
+                    clearOverlay.classList.add("overlay-wp");
+                }
+            }
+          }
+
+          stage.classList.add("loading");
+      } else if (stage.classList.contains("loading")) {
+          if (blurOverlay && clearOverlay) {
+              clearOverlay.style.display = "none";
+              blurOverlay.classList.add("fadeOut");
+          }
+
+          stage.classList.remove("loading");
+      }
+  };
+
+  /*     var  toggleLoadingScreen =  function (isLoading) {
                console.log('stating loading screen')
                contentLoaded = false;
 
@@ -54,7 +79,7 @@
                     stage.classList.remove("loading");
             }
        
-       }
+       } */
         
         
         })();
