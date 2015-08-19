@@ -52,7 +52,7 @@
                         var capturePreview = webview.capturePreviewToBlobAsync();
                         var blurImage = document.querySelector(".webview-overlay svg image");
 
-                        var cap = function (completeEvent) {
+                        capturePreview.oncomplete = function (completeEvent) {
                                 console.log('capture is complete')
                             var reader = new window.FileReader();
                             reader.readAsDataURL(completeEvent.target.result);
@@ -66,7 +66,6 @@
                                 }
                             
                         };
-                        capturePreview.addEventListiner('complete', cap);
                         capturePreview.start();
                     }
 
