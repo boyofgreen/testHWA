@@ -37,7 +37,7 @@
     </nav>
 <div class="stage" id="stage">
 <x-ms-webview src=" http://m.bbc.co.uk/sport.app" id="webview" style="width:100%; height:100%"></x-ms-webview>
-    <div class="webview-overlay">
+    <div class="webview-overlay fadeOut">
         <svg preserveAspectRatio="true">
             <defs>
                 <filter id="filtersPicture">
@@ -47,7 +47,7 @@
             <image x="0" y="0" width="100%" height="100%" xlink:href="" filter="url(#filtersPicture)"></image>
         </svg>
     </div>
-    <div class="transparent-overlay fadeOut"></div>
+    <div class="transparent-overlay"></div>
     <div id="loading-wrapper" class="loading-wrapper">
         <progress id="page-load-progress" class="loading-progress win-ring win-large"></progress>
     </div>
