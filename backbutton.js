@@ -33,6 +33,7 @@ function handleSystemNavigationEvent(args) {
     if (webview.canGoBack == false) {
         return;
     }
+    webview.goBack();
 
 }
 
