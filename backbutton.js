@@ -54,5 +54,8 @@ function handleSystemNavigationEvent(args) {
                 systemNavigation.appViewBackButtonVisibility = Windows.UI.Core.AppViewBackButtonVisibility.visible;
         
     }
+    else{
+        systemNavigation.appViewBackButtonVisibility = Windows.UI.Core.AppViewBackButtonVisibility.hidden;
+    }
       });
       
