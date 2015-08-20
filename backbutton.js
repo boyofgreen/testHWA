@@ -1,6 +1,6 @@
 
 
-
+	var webview = document.getElementById('webview');
 
 
 // Hardcoded Navigation Stack
@@ -30,11 +30,10 @@ function setNavigationState() {
 
 // function to handle the system Navigation Event
 function handleSystemNavigationEvent(args) {
-    if (navigationStack.length <= 0) {
+    if (webview.canGoBack == false) {
         return;
     }
-    args.handled = true;
-    goBack();
+
 }
 
 // Initialize the code on Windows load
@@ -43,4 +42,16 @@ function handleSystemNavigationEvent(args) {
         var systemNavigationManager = Windows.UI.Core.SystemNavigationManager.getForCurrentView();
         systemNavigationManager.addEventListener("backrequested", handleSystemNavigationEvent.bind(this));
 		var systemNavigation = Windows.UI.Core.SystemNavigationManager.getForCurrentView();
-        systemNavigation.appViewBackButtonVisibility = Windows.UI.Core.AppViewBackButtonVisibility.visible;
+
+        
+     
+     //set up event to show if you can
+     
+      webview.addEventListener('MSWebViewDOMContentLoaded', function(){
+        
+    if (webview.canGoBack == true) {
+                systemNavigation.appViewBackButtonVisibility = Windows.UI.Core.AppViewBackButtonVisibility.visible;
+        
+    }
+      });
+      
