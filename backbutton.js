@@ -41,6 +41,6 @@ function handleSystemNavigationEvent(args) {
 
    //  setNavigationState();
         var systemNavigationManager = Windows.UI.Core.SystemNavigationManager.getForCurrentView();
-        systemNavigationManager.addEventListener("backrequested", this.handleSystemNavigationEvent.bind(this));
+        systemNavigationManager.addEventListener("backrequested", handleSystemNavigationEvent.bind(this));
 		var systemNavigation = Windows.UI.Core.SystemNavigationManager.getForCurrentView();
-systemNavigation.appViewBackButtonVisibility = Windows.UI.Core.AppViewBackButtonVisibility.visible;
+        systemNavigation.appViewBackButtonVisibility = Windows.UI.Core.AppViewBackButtonVisibility.visible;
