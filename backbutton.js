@@ -1,4 +1,4 @@
-
+(function(){
 
 	var webview = document.getElementById('webview');
     var initURL;
@@ -37,3 +37,5 @@ function handleSystemNavigationEvent(args) {
     }
       });
       
+      
+      })();
