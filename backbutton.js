@@ -2,7 +2,8 @@
 
 	var webview = document.getElementById('webview');
     var initURL;
-    setTimeout(function(){    initURL = webview.src + "";},500)
+    //this is a cheat, probably only real way is to pull it from the manifest
+    setTimeout(function(){    initURL = webview.src + "";},1000)
 
 
 // function to handle the system Navigation Event
