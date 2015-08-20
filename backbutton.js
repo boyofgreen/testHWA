@@ -1,7 +1,9 @@
 
 
 	var webview = document.getElementById('webview');
-    var initURL = webview.src + "";
+    var initURL;
+    setTimout(function(){    initURL = webview.src + "";},1000)
+
 
 // function to handle the system Navigation Event
 function handleSystemNavigationEvent(args) {
