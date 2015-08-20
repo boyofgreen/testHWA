@@ -1,7 +1,7 @@
 
 
 	var webview = document.getElementById('webview');
-    var initURL = webview.src.toString();
+    var initURL = webview.src + "";
 
 // function to handle the system Navigation Event
 function handleSystemNavigationEvent(args) {
@@ -25,7 +25,7 @@ function handleSystemNavigationEvent(args) {
      
       webview.addEventListener('MSWebViewDOMContentLoaded', function(){
         
-    if (webview.canGoBack == true || initURL != webvew.src) {
+    if (webview.canGoBack == true || initURL != webview.src) {
                 systemNavigation.appViewBackButtonVisibility = Windows.UI.Core.AppViewBackButtonVisibility.visible;
         
     }
