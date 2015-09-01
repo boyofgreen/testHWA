@@ -62,6 +62,16 @@
         homeMain.addEventListener('pointerdown', function(){webview.navigate('http://m.bbc.co.uk/sport.app')});
          home.addEventListener('pointerdown', function(){webview.navigate('http://m.bbc.co.uk/sport.app')});
           football.addEventListener('pointerdown', function(){webview.navigate('http://m.bbc.co.uk/sport/football.app')});
+          
+          
+          //titlebar color
+          Windows.UI.ViewManagement.ApplicationView.getForCurrentView().titleBar.backgroundColor = {a:255, r:255, g:224, b:1};
+Windows.UI.ViewManagement.ApplicationView.getForCurrentView().titleBar.buttonBackgroundColor = { a: 255, r: 255, g: 224, b: 1 };
+Windows.UI.ViewManagement.ApplicationView.getForCurrentView().titleBar.buttonForegroundColor = Windows.UI.Colors.black;
+Windows.UI.ViewManagement.ApplicationView.getForCurrentView().titleBar.foregroundColor = Windows.UI.Colors.black;
+
+          
+          
     </script>
     <style>
     body,html,.stage{height:100%}
