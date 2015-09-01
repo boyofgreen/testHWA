@@ -70,6 +70,7 @@ progress {
     width: 180px;
     height: 6px;
     border-style: none;
+    color: black
 }
 progress.win-medium {
     width: 280px;
