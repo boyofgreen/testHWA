@@ -156,7 +156,7 @@
     "@navbar-default-link-active-bg": "darken(@navbar-default-bg, 6.5%)",
     "@navbar-default-link-disabled-color": "#ccc",
     "@navbar-default-link-disabled-bg": "transparent",
-    "@navbar-default-brand-color": "@navbar-default-link-color",
+    "@navbar-default-brand-color": "@navbar-default-link-color"
     "@navbar-default-brand-hover-color": "darken(@navbar-default-brand-color, 10%)",
     "@navbar-default-brand-hover-bg": "transparent",
     "@navbar-default-toggle-hover-bg": "#ddd",
