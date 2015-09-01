@@ -1,3 +1,9 @@
 
 
 body{background-color: black} 
+
+body .navbar	{
+	background-color: #FFE001;
+	color: black;
+	
+}
