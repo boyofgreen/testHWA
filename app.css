@@ -13,3 +13,9 @@ body .navbar a{
 	color: black;
 	
 }
+
+#bbcsLogo{height: 30px}
+
+body .nav .navbar-toggle{
+	padding:0;
+}
