@@ -70,6 +70,16 @@ Windows.UI.ViewManagement.ApplicationView.getForCurrentView().titleBar.buttonBac
 Windows.UI.ViewManagement.ApplicationView.getForCurrentView().titleBar.buttonForegroundColor = Windows.UI.Colors.black;
 Windows.UI.ViewManagement.ApplicationView.getForCurrentView().titleBar.foregroundColor = Windows.UI.Colors.black;
 
+       webview.addEventListener('MSWebViewNavigationStarting', function (e) {
+          
+           var activeURL = e.uri;
+           if (activeURL.match('football')) {
+               e.stopPropagation();
+               webview.navigate('http://www.nfl.com');
+           }
+           document.focus();
+       });
+
           
           
     </script>
